@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-background text-fg antialiased;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3.5rem;
+  }
+
+  body {
+    @apply bg-background font-sans;
+  }
+
+  ::selection {
+    @apply bg-acid text-background;
+  }
+}
+
+@layer utilities {
+  .stretch-tight {
+    font-stretch: 75%;
+  }
+
+  .stretch-wide {
+    font-stretch: 125%;
+  }
+
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px theme("colors.muted");
+  }
+
+  .text-outline-dim {
+    color: transparent;
+    -webkit-text-stroke: 1px theme("colors.line");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
